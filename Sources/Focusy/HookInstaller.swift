@@ -2,9 +2,9 @@ import Foundation
 
 enum HookInstaller {
     static let supportDir = URL(fileURLWithPath: NSHomeDirectory())
-        .appendingPathComponent(".focuscapsule", isDirectory: true)
-    static let bridgePath = supportDir.appendingPathComponent("focuscapsule-bridge").path
-    static let marker = "focuscapsule"
+        .appendingPathComponent(".focusy", isDirectory: true)
+    static let bridgePath = supportDir.appendingPathComponent("focusy-bridge").path
+    static let marker = "focusy"
 
     static func installSupportedHooks() {
         installBridgeIfAvailable()
@@ -18,11 +18,11 @@ enum HookInstaller {
         let local: URL
         if Bundle.main.bundleURL.pathExtension == "app" {
             local = Bundle.main.bundleURL
-                .appendingPathComponent("Contents/MacOS/focuscapsule-bridge")
+                .appendingPathComponent("Contents/MacOS/focusy-bridge")
         } else {
             local = Bundle.main.bundleURL
                 .deletingLastPathComponent()
-                .appendingPathComponent("focuscapsule-bridge")
+                .appendingPathComponent("focusy-bridge")
         }
         if FileManager.default.fileExists(atPath: local.path) {
             try? FileManager.default.removeItem(atPath: bridgePath)

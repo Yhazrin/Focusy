@@ -1,6 +1,6 @@
 import AppKit
 import SwiftUI
-import FocusCapsuleCore
+import FocusyCore
 
 struct CapsulePanelView: View {
     @ObservedObject var model: AppModel

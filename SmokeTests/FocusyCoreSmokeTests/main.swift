@@ -1,5 +1,5 @@
 import Foundation
-import FocusCapsuleCore
+import FocusyCore
 
 func require(_ condition: @autoclosure () -> Bool, _ message: String) {
     if !condition() {
@@ -68,4 +68,4 @@ try store.save(snapshot)
 let loaded = try store.load()
 require(loaded == snapshot, "store round trip")
 
-print("FocusCapsuleCore smoke tests passed")
+print("FocusyCore smoke tests passed")

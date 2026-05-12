@@ -1,6 +1,6 @@
 import AppKit
 import Foundation
-import FocusCapsuleCore
+import FocusyCore
 
 @MainActor
 final class ContextMonitor {

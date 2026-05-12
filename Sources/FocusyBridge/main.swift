@@ -1,6 +1,6 @@
 import Foundation
 import Network
-import FocusCapsuleCore
+import FocusyCore
 
 let args = CommandLine.arguments
 let sourceIndex = args.firstIndex(of: "--source")

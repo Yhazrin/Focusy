@@ -1,6 +1,6 @@
 import Foundation
 import Network
-import FocusCapsuleCore
+import FocusyCore
 
 @MainActor
 final class HookServer {

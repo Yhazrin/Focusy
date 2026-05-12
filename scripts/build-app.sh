@@ -11,8 +11,8 @@ MACOS_DIR="$APP_DIR/Contents/MacOS"
 mkdir -p "$MACOS_DIR"
 
 cp "$ROOT/.build/release/FocusCapsule" "$MACOS_DIR/FocusCapsule"
-cp "$ROOT/.build/release/focuscapsule-bridge" "$MACOS_DIR/focuscapsule-bridge"
-chmod +x "$MACOS_DIR/FocusCapsule" "$MACOS_DIR/focuscapsule-bridge"
+cp "$ROOT/.build/release/focusy-bridge" "$MACOS_DIR/focusy-bridge"
+chmod +x "$MACOS_DIR/FocusCapsule" "$MACOS_DIR/focusy-bridge"
 
 cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -22,7 +22,7 @@ cat > "$APP_DIR/Contents/Info.plist" <<'PLIST'
   <key>CFBundleExecutable</key>
   <string>FocusCapsule</string>
   <key>CFBundleIdentifier</key>
-  <string>app.focuscapsule.FocusCapsule</string>
+  <string>app.focusy.FocusCapsule</string>
   <key>CFBundleName</key>
   <string>Focus Capsule</string>
   <key>CFBundleDisplayName</key>

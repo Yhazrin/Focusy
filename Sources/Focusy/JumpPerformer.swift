@@ -1,6 +1,6 @@
 import AppKit
 import Foundation
-import FocusCapsuleCore
+import FocusyCore
 
 enum JumpPerformer {
     static func perform(_ target: JumpTarget) {

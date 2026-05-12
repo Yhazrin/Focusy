@@ -2,7 +2,7 @@ import AppKit
 import SwiftUI
 
 @main
-struct FocusCapsuleApp: App {
+struct FocusyApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @StateObject private var services = AppServices.shared
 
@@ -104,7 +104,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 SettingsRow(title: "Accessibility", ok: model.permissions.accessibility)
                 SettingsRow(title: "Screen Recording", ok: model.permissions.screenRecording)
-                SettingsRow(title: "Hook Socket", ok: FileManager.default.fileExists(atPath: "/tmp/focuscapsule-\(getuid()).sock"))
+                SettingsRow(title: "Hook Socket", ok: FileManager.default.fileExists(atPath: "/tmp/focusy-\(getuid()).sock"))
             }
 
             HStack {

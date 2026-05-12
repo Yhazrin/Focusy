@@ -2,30 +2,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "FocusCapsule",
+    name: "Focusy",
     platforms: [.macOS(.v14)],
     products: [
-        .executable(name: "FocusCapsule", targets: ["FocusCapsule"]),
-        .executable(name: "focuscapsule-bridge", targets: ["FocusCapsuleBridge"]),
-        .executable(name: "FocusCapsuleCoreSmokeTests", targets: ["FocusCapsuleCoreSmokeTests"]),
-        .library(name: "FocusCapsuleCore", targets: ["FocusCapsuleCore"]),
+        .executable(name: "Focusy", targets: ["Focusy"]),
+        .executable(name: "focusy-bridge", targets: ["FocusyBridge"]),
+        .executable(name: "FocusyCoreSmokeTests", targets: ["FocusyCoreSmokeTests"]),
+        .library(name: "FocusyCore", targets: ["FocusyCore"]),
     ],
     targets: [
-        .target(name: "FocusCapsuleCore", path: "Sources/FocusCapsuleCore"),
+        .target(name: "FocusyCore", path: "Sources/FocusyCore"),
         .executableTarget(
-            name: "FocusCapsule",
-            dependencies: ["FocusCapsuleCore"],
-            path: "Sources/FocusCapsule"
+            name: "Focusy",
+            dependencies: ["FocusyCore"],
+            path: "Sources/Focusy"
         ),
         .executableTarget(
-            name: "FocusCapsuleBridge",
-            dependencies: ["FocusCapsuleCore"],
-            path: "Sources/FocusCapsuleBridge"
+            name: "FocusyBridge",
+            dependencies: ["FocusyCore"],
+            path: "Sources/FocusyBridge"
         ),
         .executableTarget(
-            name: "FocusCapsuleCoreSmokeTests",
-            dependencies: ["FocusCapsuleCore"],
-            path: "SmokeTests/FocusCapsuleCoreSmokeTests"
+            name: "FocusyCoreSmokeTests",
+            dependencies: ["FocusyCore"],
+            path: "SmokeTests/FocusyCoreSmokeTests"
         ),
     ]
 )

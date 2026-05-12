@@ -1,7 +1,7 @@
 import AppKit
 import Combine
 import Foundation
-import FocusCapsuleCore
+import FocusyCore
 import SwiftUI
 
 @MainActor
