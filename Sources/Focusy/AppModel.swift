@@ -83,14 +83,14 @@ final class AppModel: ObservableObject {
     }
 
     func toggleExpanded() {
-        withAnimation(.spring(response: 0.38, dampingFraction: 0.86, blendDuration: 0.08)) {
+        withAnimation(.spring(response: 0.32, dampingFraction: 0.68, blendDuration: 0.1).speed(1.15)) {
             isExpanded.toggle()
         }
     }
 
     func expandFromDock() {
         playLiquidMorph()
-        withAnimation(.spring(response: 0.38, dampingFraction: 0.86, blendDuration: 0.08)) {
+        withAnimation(.spring(response: 0.35, dampingFraction: 0.65, blendDuration: 0.12).speed(1.1)) {
             isExpanded = true
         }
     }
@@ -98,8 +98,8 @@ final class AppModel: ObservableObject {
     func playLiquidMorph() {
         isLiquidMorphing = true
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 170_000_000)
-            withAnimation(.spring(response: 0.44, dampingFraction: 0.72, blendDuration: 0.06)) {
+            try? await Task.sleep(nanoseconds: 120_000_000)
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.58, blendDuration: 0.1).speed(1.2)) {
                 isLiquidMorphing = false
             }
         }

@@ -134,8 +134,9 @@ final class PanelController: NSObject, NSWindowDelegate {
         let size = nsSize(CapsuleLayout.size(isExpanded: false, mode: decision, metrics: model.metrics))
         let snapped = frame(for: decision, from: panel.frame, size: size)
         NSAnimationContext.runAnimationGroup { context in
-            context.duration = 0.26
+            context.duration = 0.32
             context.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            context.allowsImplicitAnimation = true
             panel.animator().setFrame(snapped, display: true)
         }
     }

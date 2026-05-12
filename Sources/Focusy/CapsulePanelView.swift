@@ -35,8 +35,9 @@ struct CapsulePanelView: View {
                     if model.isExpanded {
                         expandedContent
                             .opacity(revealContent ? 1 : 0)
-                            .offset(y: revealContent ? 0 : -8)
-                            .transition(.opacity.combined(with: .move(edge: .top)))
+                            .offset(y: revealContent ? 0 : -12)
+                            .scaleEffect(revealContent ? 1 : 0.96, anchor: .top)
+                            .transition(.opacity.combined(with: .scale(scale: 0.95, anchor: .top)))
                     }
                 }
                 .padding(contentPadding)
@@ -46,15 +47,15 @@ struct CapsulePanelView: View {
         .background(Color.clear)
         .scaleEffect(liquidScale, anchor: liquidAnchor)
         .offset(y: liquidOffsetY)
-        .animation(.spring(response: 0.42, dampingFraction: 0.76, blendDuration: 0.06), value: model.isLiquidMorphing)
-        .animation(.spring(response: 0.38, dampingFraction: 0.86, blendDuration: 0.08), value: model.isExpanded)
-        .animation(.spring(response: 0.38, dampingFraction: 0.86, blendDuration: 0.08), value: model.dockMode.rawValue)
+        .animation(.spring(response: 0.4, dampingFraction: 0.62, blendDuration: 0.1).speed(1.15), value: model.isLiquidMorphing)
+        .animation(.spring(response: 0.35, dampingFraction: 0.65, blendDuration: 0.12).speed(1.1), value: model.isExpanded)
+        .animation(.spring(response: 0.35, dampingFraction: 0.65, blendDuration: 0.12).speed(1.1), value: model.dockMode.rawValue)
         .onChange(of: model.isExpanded) { _, expanded in
             onLayoutChanged()
             revealContent = false
             if expanded {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
-                    withAnimation(.easeOut(duration: 0.18)) { revealContent = true }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.08) {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7, blendDuration: 0.1).speed(1.2)) { revealContent = true }
                 }
             }
         }
